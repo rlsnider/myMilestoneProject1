@@ -36,10 +36,10 @@ function yourScore(){
 
 }
 //hides display dialog so new dialog can go into paragraph.
-function hide(){
-    document.getElementsByTagName(p).innerHTML="";
+// function hide(){
+//     document.getElementsByClassName('dialog').innerHTML="";
 
-}
+// }
 
 
 //functions for uncovering and covering buttons and statements
@@ -61,7 +61,7 @@ function statement1(){
     console.log("statement 2 was clicked")
     document.getElementById('submit1').style.display="none";
      document.getElementById('continue2').style.display="";
-    hide();
+    
      let answer = document.getElementById('question1').value;
      let correctAnswer = answers[0]
      if(answer===correctAnswer){
@@ -71,7 +71,7 @@ function statement1(){
          document.getElementById('question1').style.display="none"
          yourScore();
       } else {
-             hide();
+             
             
              document.getElementById('submit1').style.display="none";
              document.getElementById('continue2').style.dispaly="";
@@ -97,7 +97,7 @@ function statement1(){
     console.log('statement 4 has been clicked')
      document.getElementById('submit2').style.display="none";
      document.getElementById('continue3').style.display="";
-     hide();
+     
      let answer= document.getElementById('question2').value
      let correctAnswer= answers[1]
      if(answer===correctAnswer){
@@ -126,7 +126,7 @@ function statement1(){
         console.log('statement 6 has been clicked')
         document.getElementById('submit3').style.display="none";
         document.getElementById('continue4').style.display="";
-        hide();
+        
         let answer = document.getElementById('question3').value
         let correctAnswer = answers[2]
         if(answer===correctAnswer){
@@ -151,10 +151,10 @@ function statement1(){
     }
     //submit4 calls function8
     function statement8(){
-        console.log()
+        console.log("statement8 has been clicked")
         document.getElementById('submit4').style.display="none";
         document.getElementById('continue5').style.display="";
-        hide();
+        
         let answer = document.getElementById('question4').value
         let correctAnswer = answers[3]
         if(answer===correctAnswer){
@@ -163,22 +163,49 @@ function statement1(){
             document.getElementById('question4').style.display="none";
             document.getElementById('dialog4').innerHTML="What are you doing? How did you get that answer correct? One last question. Let's finish this. Press continue to get your last question.";
         } else {
-            hide();
+            
             document.getElementById('dialog4').innerHTML="You're really no match for me are you? Well go ahead and press continue to get your last question.";
             document.getElementById('question4').style.display="none";
         }
     }
+    //Question 5
     //contiue5 calls function statement9
     function statement9(){
-        
+        console.log('statement9 has been clicked')
+        document.getElementById('fieldset4').style.display="none";
+        document.getElementById('fieldset5').style.display="";
+        document.getElementById('dialog5').innerHTML="What is the only word in the english language that has 3 sets of doubletters back to back."
+        document.getElementById('question5').style.display="";
+        document.getElementById('continue5').style.display="none";
+        document.getElementById('submit5').style.display="";
     }
+    //submit5 calls function10
+    function statement10(){
+        console.log('statement10 has been clicked')
+        document.getElementById('submit5').style.display="none";
+        document.getElementById('continue6').style.display="";
+        let answer = document.getElementById('question5').value;
+        let correctAnswer = answers[4]
+        if(answer===correctAnswer){
+            userScore++;
+            yourScore();
+        document.getElementById('dialog5').innerHTML="You weren't supposed to get the last question right! Press Continue."
+        document.getElementById('question5').style.display="none";
+        } else {
+            document.getElementById('dialog5').innerHTML="Well that last question was pretty hard, for a three year old! HA! Press Continue."
+            document.getElementById('question5').style.display="none";
+        }
+    }
+//continue6 calls function11
+function statement11(){
+    console.log('statement11 has been clicked')
+    document.getElementById('fieldset5').style.display="none";
+    document.getElementById('fieldset6').style.display="";
+    document.getElementById('continue6').style.display="none";
+    if(userScore > 2){
+        document.getElementById('dialog6').innerHTML="I know you cheated. I don't know how, but I'll figure it out. As for now you may pass if you dare. The challenges on the other side of the bridge are much more difficult.";
+    } else {
+        document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge."
+    }
+}
 
-//    function final(){
-//     hide();
-//     if(userScore > 2){
-//         document.getElementById('dialog1').innerHTML="I know you cheated. I don't know how, but I'll figure it out. As for now you may pass if you dare. The challenges on the other side of the bridge are much more difficult.";
-//     } els}e{
-//         hide();
-//         document.getElementById('dialog1').innerHTML="You must feel pretty dumb right now, huh? Well go like your wounds somewhere else, your're not crossing <strong>MY</strong> bridge."
-//     }
-// }
