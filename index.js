@@ -2,7 +2,7 @@
 
 let answers=["SHADOW", "NOTHING", "YOUR NAME", "THE DARK", "BOOKKEEPER"]
 
-let userScore = 0;
+
 
 //set all buttons ivisible except for start button.
 
@@ -17,6 +17,7 @@ document.getElementById('submit4').style.display="none";
 document.getElementById('continue5').style.display="none";
 document.getElementById('submit5').style.display="none";
 document.getElementById('continue6').style.display="none";
+document.getElementById('continue7').style.display="none";
 
 
 //These are the fieldset containers
@@ -53,6 +54,7 @@ function statement1(){
     document.getElementById('dialog1').innerHTML="Only one color, but not one size,<br> stuck at the bottom, yet easily flies.<br> Present in sun, but not in rain,<br> doing no harm and feeling no pain.<br> What am I?";
    
 }
+let userScore = 0;
 //waits for onclick from button, then runs statement 2
 //turn off display of continue1, open up submit2 turn of dialog1
 //compare userinput to 0 in answer array, if match, print dialog, turn off button 2 open up button 3.
@@ -203,9 +205,21 @@ function statement11(){
     document.getElementById('fieldset6').style.display="";
     document.getElementById('continue6').style.display="none";
     if(userScore > 2){
+        
         document.getElementById('dialog6').innerHTML="I know you cheated. I don't know how, but I'll figure it out. As for now you may pass if you dare. The challenges on the other side of the bridge are much more difficult.";
     } else {
-        document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge."
+        document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge. But I am a generous troll, so if you want to play again just click the start over button."
+    document.getElementById('continue7').style.display="";
+    
     }
 }
-
+//start over
+function restart(){
+    document.getElementById('fieldset6').style.display="none";
+    document.getElementById('continue7').style.display="none";
+    statement1()
+    if(userScore > 0){
+   userScore = 0
+   yourScore()
+    }
+}
