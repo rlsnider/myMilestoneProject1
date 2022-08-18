@@ -1,13 +1,18 @@
 body {
     background-image:URL("assets/hert-niks-tyI1b2abVKE-unsplash.jpg");
-    background-size: 1600px 1900px;
-    background-repeat: no-repeat;
+    background-color:lightblue;/*if background pic is not available in your browser*/
+    height:700px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  
 }
 fieldset {
     border: 5px solid black;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: white;
     width: 50%;
+    margin-right:65px;
     float: right;
 
 }
@@ -21,10 +26,13 @@ legend{
 }
 .continue{
     border: 5px inset white;
-    background-color: red;
+    background-color: brown;
     color: white;
     height: 50px;
     width: 200px;
     margin-left: 55%;
     margin-top: 20px;
+}
+.continue:hover{
+    background-color:red;
 }
