@@ -65,6 +65,7 @@ let userScore = 0;
      document.getElementById('continue2').style.display="";
     
      let answer = document.getElementById('question1').value;
+    
      let correctAnswer = answers[0]
      if(answer===correctAnswer){
         userScore++;
@@ -73,8 +74,6 @@ let userScore = 0;
          document.getElementById('question1').style.display="none"
          yourScore();
       } else {
-             
-            
              document.getElementById('submit1').style.display="none";
              document.getElementById('continue2').style.dispaly="";
              document.getElementById('dialog1').innerHTML="Ha! I knew you couldn't do it. You get another chance though. Click continue when you are ready to resume."
@@ -205,7 +204,7 @@ function statement11(){
     document.getElementById('fieldset6').style.display="";
     document.getElementById('continue6').style.display="none";
     if(userScore > 2){
-        
+
         document.getElementById('dialog6').innerHTML="I know you cheated. I don't know how, but I'll figure it out. As for now you may pass if you dare. The challenges on the other side of the bridge are much more difficult.";
     } else {
         document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge. But I am a generous troll, so if you want to play again just click the start over button."
