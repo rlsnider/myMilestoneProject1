@@ -16,8 +16,8 @@ document.getElementById('ask-question4').style.display="none";
 document.getElementById('answer-question4').style.display="none";
 document.getElementById('ask-question5').style.display="none";
 document.getElementById('answer-question5').style.display="none";
-document.getElementById('final').style.display="none";
-document.getElementById('restart').style.display="none";
+document.getElementById('final-dialog').style.display="none";
+document.getElementById('restart-game').style.display="none";
 
 
 //These are the fieldset containers
@@ -47,7 +47,7 @@ function askQuestion1(){
     document.getElementById('startup').style.display="none";
     document.getElementById('fieldset1').style.display="";
     document.getElementById('dialog1').innerHTML="Only one color, but not one size,<br> stuck at the bottom, yet easily flies.<br> Present in sun, but not in rain,<br> doing no harm and feeling no pain.<br> What am I?";
-   
+    document.getElementById('question1').style.display="";
 }
 let userScore = 0;
 //waits for onclick from button, answerQuestion1
@@ -177,7 +177,7 @@ let userScore = 0;
     function answerQuestion5(){
         console.log('answerQuestion5 has been clicked')
         document.getElementById('answer-question5').style.display="none";
-        document.getElementById('final').style.display="";
+        document.getElementById('final-dialog').style.display="";
         let answer = document.getElementById('question5').value;
         let correctAnswer = answers[4]
         if(answer===correctAnswer){
@@ -195,23 +195,23 @@ function final(){
     console.log('final has been clicked')
     document.getElementById('fieldset5').style.display="none";
     document.getElementById('fieldset6').style.display="";
-    document.getElementById('final').style.display="none";
+    document.getElementById('final-dialog').style.display="none";
     if(userScore > 2){
 
         document.getElementById('dialog6').innerHTML="I know you cheated. I don't know how, but I'll figure it out. As for now you may pass if you dare. The challenges on the other side of the bridge are much more difficult.";
     } else {
         document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge. But I am a generous troll, so if you want to play again just click the start over button."
-        document.getElementById('restart').style.display="";
+        document.getElementById('restart-game').style.display="";
     
     }
 }
 //start over
-function restart(){
+function reStart(){
     document.getElementById('fieldset6').style.display="none";
-    document.getElementById('restart').style.display="none";
-    statement1()
+    document.getElementById('restart-game').style.display="none";
+    askQuestion1()
     if(userScore > 0){
    userScore = 0
-   yourScore()
+   yourScore()                  
     }
 }
