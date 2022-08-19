@@ -11,4 +11,4 @@ Credits
 --I'd like to give a big thank you to https://riddles.com. This is were some of the questions came from. 
 --W3Shcools for their clear and concise tutoritals on CSS, HTML and JavaScript. 
 --YouTuber Steve Griffith whose short online lessons give me great insight into how JavaScript works by using extremely well scripted tutorials. 
---A big shout out to Hert Niks for his beautiful picture I used as a background.
+--A big shout out to Hert Niks for his beautiful picture I used as a background that was uploaded from unsplash.
