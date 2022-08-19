@@ -17,12 +17,15 @@ fieldset {
 
 }
 p {
-    font-family: sans-serif;
-    font-size: 26px;
+    font-family: 'MedievalSharp', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
 }
 legend{
     color: brown;
     font-weight: bold;
+    font-style: italic;
+    font-size: 18px
 }
 .continue{
     border: 5px inset white;
