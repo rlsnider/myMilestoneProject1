@@ -35,7 +35,21 @@ legend{
     width: 200px;
     margin-left: 55%;
     margin-top: 20px;
+    font-style: italic;
+    font-size: 18px;
 }
 .continue:hover{
     background-color:red;
+}
+#score {
+    margin-right: 50px;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "medievalSharp", sans-serif;
+    background-color: white;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 10px;
+
 }

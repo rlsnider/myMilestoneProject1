@@ -18,6 +18,7 @@ document.getElementById('ask-question5').style.display="none";
 document.getElementById('answer-question5').style.display="none";
 document.getElementById('final-dialog').style.display="none";
 document.getElementById('restart-game').style.display="none";
+document.getElementById('score').style.display="none";
 
 
 //These are the fieldset containers
@@ -54,13 +55,16 @@ let userScore = 0;
 //turn off display of askQuestion1, open up answerQuestion1 turn of dialog1
 //compare userinput to 0 in answer array, if match, print dialog, turn off answerQuestion1 open up askQuestion2.
 
+
+
  function answerQuestion1(){
     console.log("answerQuestion 1  was clicked")
     document.getElementById('answer-question1').style.display="none";
      document.getElementById('ask-question2').style.display="";
-    
+     document.getElementById('score').style.display="";
+   
      let answer = document.getElementById('question1').value;
-    
+        
      let correctAnswer = answers[0]
      if(answer===correctAnswer){
         userScore++;
