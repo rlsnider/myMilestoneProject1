@@ -12,3 +12,6 @@ Credits
 --W3Shcools for their clear and concise tutoritals on CSS, HTML and JavaScript. 
 --YouTuber Steve Griffith whose short online lessons give me great insight into how JavaScript works by using extremely well scripted tutorials. 
 --A big shout out to Hert Niks for his beautiful picture I used as a background that was uploaded from unsplash.
+--Marc Olivier Jodoin provided the incredible picture of the wolf which I uploaded from unsplash.
+
+
