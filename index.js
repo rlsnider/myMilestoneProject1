@@ -55,6 +55,8 @@ function askQuestion1(){
     document.getElementById('fieldset1').style.display="";
     document.getElementById('dialog1').innerHTML="Only one color, but not one size,<br> stuck at the bottom, yet easily flies.<br> Present in sun, but not in rain,<br> doing no harm and feeling no pain.<br> What am I?";
     document.getElementById('question1').style.display="";
+    audio = new Audio('assets/424386__gmegas__lakeside-sounds.wav');
+    audio.play();
 }
 let userScore = 0;
 //waits for onclick from button, answerQuestion1

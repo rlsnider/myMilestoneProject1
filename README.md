@@ -13,5 +13,8 @@ Credits
 --YouTuber Steve Griffith whose short online lessons give me great insight into how JavaScript works by using extremely well scripted tutorials. 
 --A big shout out to Hert Niks for his beautiful picture I used as a background that was uploaded from unsplash.
 --Marc Olivier Jodoin provided the incredible picture of the wolf which I uploaded from unsplash.
+--A great big thanks to freesound.org for the sound effects from newagesoup for the wolf growl and gmegas for the lake sounds.
+
+
 
 
