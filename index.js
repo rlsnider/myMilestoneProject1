@@ -224,6 +224,8 @@ function final(){
     document.getElementById('score').style.display="none";
     document.getElementById('fieldset6').style.display="none";
     document.getElementById('cross-bridge').style.display="none";
+    var audio = new Audio('assets/338674__newagesoup__wolf-growl.wav');
+    audio.play();
     document.getElementById('wolf').style.display="";
 
 }
