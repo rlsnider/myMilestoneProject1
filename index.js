@@ -41,7 +41,10 @@ function yourScore(){
 
 }
 
+//function to make answers uppercase
+function capitalize(){
 
+}
 //functions for uncovering and covering buttons and statements
 
 function askQuestion1(){
@@ -66,7 +69,7 @@ let userScore = 0;
      document.getElementById('ask-question2').style.display="";
      document.getElementById('score').style.display="";
    
-     let answer = document.getElementById('question1').value;
+     let answer = document.getElementById('question1').value.toUpperCase();
         
      let correctAnswer = answers[0]
      if(answer===correctAnswer){
@@ -99,7 +102,7 @@ let userScore = 0;
      document.getElementById('answer-question2').style.display="none";
      document.getElementById('ask-question3').style.display="";
      
-     let answer= document.getElementById('question2').value
+     let answer= document.getElementById('question2').value.toUpperCase();
      let correctAnswer= answers[1]
      if(answer===correctAnswer){
          userScore++;
@@ -128,7 +131,7 @@ let userScore = 0;
         document.getElementById('answer-question3').style.display="none";
         document.getElementById('ask-question4').style.display="";
         
-        let answer = document.getElementById('question3').value
+        let answer = document.getElementById('question3').value.toUpperCase();
         let correctAnswer = answers[2]
         if(answer===correctAnswer){
             userScore++;
@@ -156,7 +159,7 @@ let userScore = 0;
         document.getElementById('answer-question4').style.display="none";
         document.getElementById('ask-question5').style.display="";
         
-        let answer = document.getElementById('question4').value
+        let answer = document.getElementById('question4').value.toUpperCase();
         let correctAnswer = answers[3]
         if(answer===correctAnswer){
             userScore++;
@@ -185,7 +188,7 @@ let userScore = 0;
         console.log('answerQuestion5 has been clicked')
         document.getElementById('answer-question5').style.display="none";
         document.getElementById('final-dialog').style.display="";
-        let answer = document.getElementById('question5').value;
+        let answer = document.getElementById('question5').value.toUpperCase();
         let correctAnswer = answers[4]
         if(answer===correctAnswer){
             userScore++;
@@ -234,3 +237,4 @@ function reStart(){
    yourScore()                  
     }
 }
+
