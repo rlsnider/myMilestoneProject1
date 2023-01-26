@@ -1,0 +1,86 @@
+body {
+  background-image: URL("../assets/hert-niks-tyI1b2abVKE-unsplash.jpg");
+  background-color: lightblue; /*if background pic is not available in your browser*/
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+fieldset {
+  border: 5px solid black;
+  border-radius: 20px;
+  background-color: white;
+  width: 50%;
+  margin-right: 65px;
+  float: right;
+}
+
+p {
+  font-family: MedievalSharp, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+legend {
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.continue {
+  border: 5px inset white;
+  background-color: orange;
+  height: 50px;
+  width: 200px;
+  margin-left: 55%;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 18px;
+}
+.continue:hover {
+  background-color: red;
+}
+
+#score {
+  margin-right: 50px;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "medievalSharp", sans-serif;
+  background-color: white;
+  border: 3px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#wolf {
+  width: 100px;
+  height: 100px;
+  background-image: url("../assets/marc-olivier-jodoin-tauPAnOIGvE-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  animation-name: example;
+  animation-fill-mode: forwards;
+  animation-duration: 10s;
+}
+
+@keyframes example {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+  to {
+    width: 1800px;
+    height: 1000px;
+  }
+}
+#lunch {
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

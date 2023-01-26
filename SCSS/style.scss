@@ -1,0 +1,92 @@
+//Scss Variables
+$fonts: MedievalSharp, sans-serif;
+$size: 50px;
+//Scss Color variables
+$bgColor: lightblue;
+$fsColor: white;
+$border: black;
+$legendColor: black;
+$btnColor1: red;
+$btnColor2: orange;
+
+@function btnWidth($num) {
+@return $num * 4;
+}
+@function resize($num){
+@return $num *2;
+}
+body {
+    background-image: URL("../assets/hert-niks-tyI1b2abVKE-unsplash.jpg");
+    background-color: $bgColor;/*if background pic is not available in your browser*/
+    height:700px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  
+}
+fieldset {
+    border: 5px solid $border;
+    border-radius: 20px;
+    background-color: $fsColor;
+    width: 50%;
+    margin-right:65px;
+    float: right;
+
+}
+p {
+    font-family: $fonts;
+    font-size: 32px;
+    font-weight: bold;
+}
+legend{
+    color: $legendColor;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px
+}
+.continue{
+    border: 5px inset $fsColor;
+    background-color: $btnColor2;
+    height: $size;
+    width: btnWidth($size);
+    margin-left: 55%;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 18px;
+    &:hover{
+        background-color: $btnColor1;
+    }
+}
+
+#score {
+    margin-right: 50px;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "medievalSharp", sans-serif;
+    background-color: $fsColor;
+    border: 3px solid $border;
+    padding: 5px;
+    border-radius: 10px;
+
+}
+#wolf {
+    width: resize($size);
+    height: resize($size);
+    background-image:url('../assets/marc-olivier-jodoin-tauPAnOIGvE-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: example;
+    animation-fill-mode: forwards;
+    animation-duration: 10s;
+}
+@keyframes example {
+    from {width:resize($size); height:resize($size)}
+    to {width:1800px; height: 1000px}
+}
+#lunch{
+    font-size: 30px;
+    font-weight: bold;
+    color: $btnColor1;
+} 

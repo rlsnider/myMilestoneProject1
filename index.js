@@ -41,10 +41,7 @@ function yourScore(){
 
 }
 
-//function to make answers uppercase
-function capitalize(){
 
-}
 //functions for uncovering and covering buttons and statements
 
 function askQuestion1(){
@@ -211,7 +208,7 @@ function final(){
         document.getElementById('dialog6').innerHTML="I know you cheated. I don't know how, but I'll figure it out. As for now you may pass if you dare. The challenges on the other side of the bridge are much more difficult.";
         document.getElementById('cross-bridge').style.display="";
     } else {
-        document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge. But I am a generous troll, so if you want to play again just click the start over button."
+        document.getElementById('dialog6').innerHTML="You must feel pretty dumb right now, huh? Well go lick your wounds somewhere else, you're not crossing <strong>MY</strong> bridge. But I am a generous troll, so if you want to play again just click the Restart Game button."
         document.getElementById('restart-game').style.display="";
     
     } 
