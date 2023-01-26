@@ -1,0 +1,13 @@
+.continue{
+    border: 5px inset $fsColor;
+    background-color: $btnColor2;
+    height: $size;
+    width: btnWidth($size);
+    margin-left: 55%;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 18px;
+    &:hover{
+        background-color: $btnColor1;
+    }
+}

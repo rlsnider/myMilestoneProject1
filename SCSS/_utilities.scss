@@ -1,0 +1,13 @@
+@function btnWidth($num) {
+    @return $num * 4;
+    }
+    @function resize($num){
+    @return $num *2;
+    }
+    
+    @function resizeValue($num){
+        @if unitless($num){
+            @warn "Assuming value `#{$num}` to be in pixels; attempting to convert it.";
+            $value: $value*1px;
+        }
+    }

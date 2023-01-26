@@ -1,3 +1,17 @@
+.continue {
+  border: 5px inset white;
+  background-color: orange;
+  height: 50px;
+  width: 200px;
+  margin-left: 55%;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 18px;
+}
+.continue:hover {
+  background-color: red;
+}
+
 body {
   background-image: URL("../assets/hert-niks-tyI1b2abVKE-unsplash.jpg");
   background-color: lightblue; /*if background pic is not available in your browser*/
@@ -15,32 +29,26 @@ fieldset {
   margin-right: 65px;
   float: right;
 }
-
-p {
+fieldset:hover {
+  border: 10px dashed blue;
+  background-color: lightblue;
+}
+fieldset p {
   font-family: MedievalSharp, sans-serif;
   font-size: 32px;
   font-weight: bold;
 }
-
-legend {
+fieldset p:hover {
+  color: brown;
+}
+fieldset legend {
   color: black;
   font-weight: bold;
   font-style: italic;
   font-size: 18px;
 }
-
-.continue {
-  border: 5px inset white;
-  background-color: orange;
-  height: 50px;
-  width: 200px;
-  margin-left: 55%;
-  margin-top: 20px;
-  font-style: italic;
-  font-size: 18px;
-}
-.continue:hover {
-  background-color: red;
+fieldset legend:hover {
+  color: blue;
 }
 
 #score {
@@ -48,7 +56,7 @@ legend {
   float: right;
   font-size: 30px;
   font-weight: bold;
-  font-family: "medievalSharp", sans-serif;
+  font-family: MedievalSharp, sans-serif;
   background-color: white;
   border: 3px solid black;
   padding: 5px;
@@ -62,12 +70,12 @@ legend {
   background-position: center;
   background-size: cover;
   position: absolute;
-  animation-name: example;
+  animation-name: grow;
   animation-fill-mode: forwards;
   animation-duration: 10s;
 }
 
-@keyframes example {
+@keyframes grow {
   from {
     width: 100px;
     height: 100px;

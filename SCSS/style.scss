@@ -1,20 +1,26 @@
-//Scss Variables
-$fonts: MedievalSharp, sans-serif;
-$size: 50px;
-//Scss Color variables
-$bgColor: lightblue;
-$fsColor: white;
-$border: black;
-$legendColor: black;
-$btnColor1: red;
-$btnColor2: orange;
+@import 'colors';
+@import 'utilities';
+@import 'variables';
+@import'btn';
 
-@function btnWidth($num) {
-@return $num * 4;
+@mixin paragraph {
+    font-family: $fonts;
+    font-size: $pfontSize;
+    font-weight: bold;
+    &:hover{ 
+        color: $hoverColor1;
+    }
 }
-@function resize($num){
-@return $num *2;
+@mixin theLegend{
+    color: $legendColor;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    &:hover{ 
+        color: $legendColor1;
+    }
 }
+
 body {
     background-image: URL("../assets/hert-niks-tyI1b2abVKE-unsplash.jpg");
     background-color: $bgColor;/*if background pic is not available in your browser*/
@@ -31,39 +37,23 @@ fieldset {
     width: 50%;
     margin-right:65px;
     float: right;
-
-}
-p {
-    font-family: $fonts;
-    font-size: 32px;
-    font-weight: bold;
-}
-legend{
-    color: $legendColor;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 18px
-}
-.continue{
-    border: 5px inset $fsColor;
-    background-color: $btnColor2;
-    height: $size;
-    width: btnWidth($size);
-    margin-left: 55%;
-    margin-top: 20px;
-    font-style: italic;
-    font-size: 18px;
     &:hover{
-        background-color: $btnColor1;
+        border: $borderHover;
+        background-color: $bgColor;
+    }
+    p {
+        @include paragraph;
+    }
+    legend{
+         @include theLegend;
     }
 }
-
 #score {
     margin-right: 50px;
     float: right;
     font-size: 30px;
     font-weight: bold;
-    font-family: "medievalSharp", sans-serif;
+    font-family: $fonts;
     background-color: $fsColor;
     border: 3px solid $border;
     padding: 5px;
@@ -77,11 +67,11 @@ legend{
     background-position: center;
     background-size: cover;
     position: absolute;
-    animation-name: example;
+    animation-name: grow;
     animation-fill-mode: forwards;
     animation-duration: 10s;
 }
-@keyframes example {
+@keyframes grow {
     from {width:resize($size); height:resize($size)}
     to {width:1800px; height: 1000px}
 }

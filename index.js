@@ -1,6 +1,6 @@
 //set arrays for functions to read
 
-let answers=["SHADOW", "NOTHING", "YOUR NAME", "THE DARK", "BOOKKEEPER"]
+let answers=["SHADOW", "NOTHING", "YOUR NAME", "DARKNESS", "BOOKKEEPER"]
 
 
 
