@@ -21,6 +21,9 @@ p {
     font-size: 32px;
     font-weight: bold;
 }
+input:focus {
+    background-color: lightblue;
+}
 legend{
     color: brown;
     font-weight: bold;
@@ -60,11 +63,12 @@ legend{
     background-position: center;
     background-size: cover;
     position: absolute;
-    animation-name: example;
+    animation-name: wolf;
     animation-fill-mode: forwards;
-    animation-duration: 10s;
+    animation-duration: 8s;
+    animation-timing-function:ease-in-out;
 }
-@keyframes example {
+@keyframes wolf {
     from {width:100px; height:100px}
     to {width:1800px; height: 1000px}
 }

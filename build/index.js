@@ -1,8 +1,50 @@
 "use strict";
 //set arrays for functions to read
 let answers = ["SHADOW", "NOTHING", "YOUR NAME", "DARKNESS", "BOOKKEEPER"];
+
+function toggleDisplay(elementId) {
+    const element = document.getElementById(elementId);
+    element.style.display = element.style.display === 'none' ? ' ' : 'none';
+}
+function showQuestion(questionNumber, question, answerIndex, onNextQuestion){
+    toggleDisplay(`question${questionNumber}`);
+    document.getElementById(`dialog1`).innerHTML = question;
+    document.getElementById(`submit${questionNumber}`).style.display ='';
+    document.getElementById(`continue${questionNumber}`).style.display = 'none';
+    document.getElementById(`submit${questionNumber}`).onclick = () => {
+        const answer = document.getElementById(`question${questionNumber}`).value;
+        if(answer.toUppercase() === answers[answerIndex]) {
+            userScore++;
+            yourScore();
+            hide();
+            toggleDisplay(`question${questionNumber}`);
+            onNextQuestion();
+        } else{
+            hide();
+            toggleDisplay(`question${questionNumber}`);
+            document.getElementById(`dialog1`).innerHTML = `Ha! I knew you couldn't do it. You get another chance though. Click continue when you are ready to resume.`;
+            yourScore();
+        }
+    };
+}
+statement1 = () => {
+    toggleDisplay('startup');
+    showQuestion(1, 'Only one color, but ont one size,<br/> stuck at the bottom, yet easily flies.<br/>Present in sun, but not in rain,<br/>doing no harm and feeling no pin.<br/>What am I?',0, () => {
+        toggleDisplay('continue2');
+        document.getElementById('dialog1').innerHTML = `Oh you really think you're smart, don't you?<br />You have't won yet!<br/>Press continue to get your third question.`
+    });
+};
+statement3 = () => {
+    showQuestion(2, `Poor people have it.<br/>Rich people need it.<br/>If you eat it you die.<br/>What is it?`, 1, () => {
+        toggleDisplay('continue3');
+        document.getElementById(`dialog1`).innerHTML = `Alright, you're doing pretty good. Here comes question number 3.`;
+    });
+};
+statement5 = () => {
+    showQuestion(3, `The more of this there is the less you see. What is it?`)
+}
 //set all buttons invisible except for start button.
-document.getElementById('ask-question1').style.display = "";
+document.getElementById('ask-question1').style.display = "none";
 document.getElementById('answer-question1').style.display = "none";
 document.getElementById('ask-question2').style.display = "none";
 document.getElementById('answer-question2').style.display = "none";
@@ -10,7 +52,8 @@ document.getElementById('ask-question3').style.display = "none";
 document.getElementById('answer-question3').style.display = "none";
 document.getElementById('ask-question4').style.display = "none";
 document.getElementById('answer-question4').style.display = "none";
-document.getElementById('ask-question5').style.display = "none";
+document.getElementById('ask-question5').style.display = "none";;
+
 document.getElementById('answer-question5').style.display = "none";
 document.getElementById('final-dialog').style.display = "none";
 document.getElementById('restart-game').style.display = "none";
@@ -23,7 +66,7 @@ document.getElementById('fieldset3').style.display = "none";
 document.getElementById('fieldset4').style.display = "none";
 document.getElementById('fieldset5').style.display = "none";
 document.getElementById('fieldset6').style.display = "none";
-//div for final scene scene
+//div for final scene 
 document.getElementById('wolf').style.display = "none";
 //set UserScore 
 //add one to score if answer is correct, 0 if answer is wrong; 
@@ -31,11 +74,9 @@ document.getElementById('wolf').style.display = "none";
 function yourScore() {
     document.getElementById('score').innerHTML = `Your score is ${userScore}`;
 }
-//function to make answers uppercase
-function capitalize() {
-}
 //functions for uncovering and covering buttons and statements
 function askQuestion1() {
+    console.log("askQuestion3 has been clicked");
     document.getElementById('ask-question1').style.display = "none";
     document.getElementById('answer-question1').style.display = "";
     document.getElementById('startup').style.display = "none";
@@ -48,46 +89,46 @@ let userScore = 0;
 //turn off display of askQuestion1, open up answerQuestion1 turn of dialog1
 //compare userinput to 0 in answer array, if match, print dialog, turn off answerQuestion1 open up askQuestion2.
 function answerQuestion1() {
-    document.getElementById('answer-question1').style.display = "none";
-    document.getElementById('ask-question2').style.display = "";
-    document.getElementById('score').style.display = "";
     let answer = document.getElementById('question1').value.toUpperCase();
+    document.getElementById('answer-question1').style.display = 'none';
+    document.getElementById('ask-question2').style.display = '';
+    document.getElementById('score').style.display = '';
     let correctAnswer = answers[0];
     if (answer === correctAnswer) {
         userScore++;
         document.getElementById('dialog1').innerHTML = "I guess I'll have to give you that one, but you won't be able to answer the next one! Press the continue button when you're ready.";
-        document.getElementById('question1').style.display = "none";
+        document.getElementById('question1').style.display = 'none';
         yourScore();
     }
     else {
         document.getElementById('dialog1').innerHTML = "Ha! I knew you couldn't do it. You get another chance though. Click continue when you are ready to resume.";
-        document.getElementById('question1').style.display = "none";
+        document.getElementById('question1').style.display = 'none';
         yourScore();
     }
 }
 //ask question2
 function askQuestion2() {
-    document.getElementById('fieldset1').style.display = "none";
-    document.getElementById('fieldset2').style.display = "";
+    document.getElementById('fieldset1').style.display = 'none';
+    document.getElementById('fieldset2').style.display = '';
     document.getElementById('dialog2').innerHTML = "Poor people have it. Rich people need it. If you eat it you die. <br> What is it?";
-    document.getElementById('question2').style.display = "";
-    document.getElementById('ask-question2').style.display = "none";
-    document.getElementById('answer-question2').style.display = "";
+    document.getElementById('question2').style.display = '';
+    document.getElementById('ask-question2').style.display = 'none';
+    document.getElementById('answer-question2').style.display = '';
 }
 // answer question 2
 function answerQuestion2() {
-    document.getElementById('answer-question2').style.display = "none";
-    document.getElementById('ask-question3').style.display = "";
+    document.getElementById('answer-question2').style.display = 'none';
+    document.getElementById('ask-question3').style.display = '';
     let answer = document.getElementById('question2').value.toUpperCase();
-    let correctAnswer = answers[1];
+    let correctAnswer = answers[1].toUpperCase();
     if (answer === correctAnswer) {
         userScore++;
         yourScore();
-        document.getElementById('question2').style.display = "none";
+        document.getElementById('question2').style.display = 'none';
         document.getElementById('dialog2').innerHTML = "Oh you think you're smart, don't you? You haven't won yet! Press continue to get your third question.";
     }
     else {
-        document.getElementById('question2').style.display = "none";
+        document.getElementById('question2').style.display = 'none';
         document.getElementById('dialog2').innerHTML = "I really thought you'd be more of a challenge. You can press continue to get your third question.";
     }
 }
@@ -103,11 +144,11 @@ function askQuestion3() {
 }
 //answer question3 
 function answerQuestion3() {
-    console.log('answerQuestion3 has been clicked');
+    console.log("answerQuestion3 has been clicked");
     document.getElementById('answer-question3').style.display = "none";
     document.getElementById('ask-question4').style.display = "";
     let answer = document.getElementById('question3').value.toUpperCase();
-    let correctAnswer = answers[2];
+    const correctAnswer = answers[2].toUpperCase();
     if (answer === correctAnswer) {
         userScore++;
         yourScore();
@@ -135,7 +176,7 @@ function answerQuestion4() {
     document.getElementById('answer-question4').style.display = "none";
     document.getElementById('ask-question5').style.display = "";
     let answer = document.getElementById('question4').value.toUpperCase();
-    let correctAnswer = answers[3];
+    let correctAnswer = answers[3].toUpperCase();
     if (answer === correctAnswer) {
         userScore++;
         yourScore();
@@ -163,7 +204,7 @@ function answerQuestion5() {
     document.getElementById('answer-question5').style.display = "none";
     document.getElementById('final-dialog').style.display = "";
     let answer = document.getElementById('question5').value.toUpperCase();
-    let correctAnswer = answers[4];
+    let correctAnswer = answers[4].toUpperCase();
     if (answer === correctAnswer) {
         userScore++;
         yourScore();
